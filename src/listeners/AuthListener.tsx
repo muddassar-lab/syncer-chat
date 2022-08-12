@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React, { ReactNode, useEffect } from "react";
 import { supabase } from "../app/supabase";
 import { useAppDispatch } from "../app/hooks";
-//import { setUser } from "../slices/AuthSlice";
+import { setUser } from "../providers/slices/authSlice";
 
 type Props = {
   children: ReactNode;
@@ -13,9 +13,9 @@ const AuthListener = (props: Props) => {
   useEffect(() => {
     supabase.auth.onAuthStateChange((event, session) => {
       if (session?.user != null || session?.user != undefined) {
-        // dispatch(setUser(session.user));
+        dispatch(setUser(session.user));
       } else {
-        // dispatch(setUser(null));
+        dispatch(setUser(null));
       }
     });
   }, []);

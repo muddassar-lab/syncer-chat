@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Button } from "@rneui/themed";
 import { Input } from "@rneui/themed";
 import Navigation from "./src/navigation/Navigation";

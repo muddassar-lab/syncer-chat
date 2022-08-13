@@ -8,7 +8,7 @@ type Props = {};
 
 const Navigation = (props: Props) => {
   const user = useAppSelector((state) => state.auth.user);
-  return <NavigationContainer>{user && <Auth></Auth>}</NavigationContainer>;
+  return <NavigationContainer>{!user && <Auth></Auth>}</NavigationContainer>;
 };
 
 export default Navigation;

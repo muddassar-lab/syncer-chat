@@ -6,12 +6,14 @@ import Register from "../screens/auth/Register";
 
 type Props = {};
 
-const AuthStack = createNativeStackNavigator();
+const AuthStack = createNativeStackNavigator<AuthStackParamList>();
 const Auth = (props: Props) => {
   return (
     <AuthStack.Navigator
+      initialRouteName="login"
       screenOptions={{
         headerShown: false,
+        animation: `slide_from_right`,
       }}
     >
       <AuthStack.Screen name="login" component={Login}></AuthStack.Screen>
@@ -21,3 +23,8 @@ const Auth = (props: Props) => {
 };
 
 export default Auth;
+
+export type AuthStackParamList = {
+  login: undefined;
+  register: undefined;
+};

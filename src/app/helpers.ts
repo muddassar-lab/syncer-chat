@@ -17,3 +17,11 @@ export const uploadToCloudinary = async (
     .catch((error) => {});
   return downloadUrl;
 };
+
+const isEmpty = (value: string): boolean => {
+  if (value.length == 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
